@@ -1,0 +1,95 @@
+/* 
+ * Save Our Libraries - Dark Mode Stylesheet
+ * Dark mode version of the black and white theme
+ */
+
+body.dark-mode {
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+body.dark-mode header {
+    background-color: var(--color-black);
+    border-bottom: 1px solid var(--color-dark-gray);
+}
+
+body.dark-mode .temp-logo {
+    border-color: var(--color-white);
+}
+
+body.dark-mode #main-nav a.active {
+    border-bottom: 2px solid var(--color-white);
+}
+
+body.dark-mode #theme-toggle {
+    border: 1px solid var(--color-dark-gray);
+    color: var(--color-white);
+}
+
+body.dark-mode a {
+    color: var(--color-white);
+}
+
+body.dark-mode a:hover, 
+body.dark-mode a:focus {
+    color: var(--color-light-gray);
+}
+
+body.dark-mode h2 {
+    border-bottom: 1px solid var(--color-dark-gray);
+}
+
+body.dark-mode .hero {
+    border-bottom: 1px solid var(--color-dark-gray);
+}
+
+body.dark-mode .cta-button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-white);
+}
+
+body.dark-mode .cta-button:hover,
+body.dark-mode .cta-button:focus {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+body.dark-mode .cta-button.secondary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+body.dark-mode .cta-button.secondary:hover,
+body.dark-mode .cta-button.secondary:focus {
+    background-color: var(--color-dark-gray);
+}
+
+body.dark-mode .action-card {
+    border: 1px solid var(--color-dark-gray);
+}
+
+body.dark-mode .action-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode footer {
+    background-color: var(--color-dark-gray);
+}
+
+body.dark-mode .footer-section h3 {
+    border-bottom: 1px solid var(--color-medium-gray);
+}
+
+body.dark-mode .copyright {
+    border-top: 1px solid var(--color-medium-gray);
+}
+
+body.dark-mode :focus {
+    outline: 2px solid var(--color-white);
+}
+
+body.dark-mode .skip-link {
+    background: var(--color-white);
+    color: var(--color-black);
+}
