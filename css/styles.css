@@ -459,3 +459,131 @@ footer {
 .skip-link:focus {
     top: 0;
 }
+
+/* Postcard Gallery Styling */
+.postcard-gallery {
+    margin: var(--spacing-xl) 0;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.gallery-item {
+    border: 1px solid var(--color-light-gray);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    background-color: var(--color-white);
+}
+
+/* Specific style for postcard 4 to ensure white background */
+[src*="postcard4_planting_seed"] {
+    background-color: var(--color-white);
+}
+
+.white-background {
+    background-color: var(--color-white);
+}
+
+/* Postcard popup styles */
+.gallery-image {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popupImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    background-color: var(--color-white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--color-white);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-caption {
+    color: var(--color-white);
+    padding: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-medium);
+    max-width: 600px;
+    margin-top: var(--spacing-sm);
+}
+
+.gallery-caption {
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-size: var(--font-size-small);
+    color: var(--color-dark-gray);
+    background-color: var(--color-white);
+}
+
+.gallery-note {
+    margin-top: var(--spacing-md);
+    font-style: italic;
+    color: var(--color-dark-gray);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .gallery-image {
+        height: 200px;
+    }
+}

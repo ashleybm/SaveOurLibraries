@@ -9,6 +9,46 @@
     <meta name="description" content="Information about our postcard program to support library advocacy">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    
+    <script>
+        // Function to open the image popup
+        function openPopup(imageSrc, caption) {
+            const popup = document.getElementById('imagePopup');
+            const popupImg = document.getElementById('popupImage');
+            const popupCaption = document.getElementById('popupCaption');
+            
+            popupImg.src = imageSrc;
+            popupImg.alt = caption;
+            popupCaption.textContent = caption;
+            
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+        }
+        
+        // Function to close the image popup
+        function closePopup() {
+            const popup = document.getElementById('imagePopup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close popup when clicking outside the image
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('imagePopup');
+            popup.addEventListener('click', function(event) {
+                if (event.target === popup) {
+                    closePopup();
+                }
+            });
+            
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && popup.style.display === 'flex') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -44,6 +84,44 @@
             <h2>About Our Postcard Program</h2>
             <p>Our postcard program provides beautifully designed, library-themed postcards at cost to support grassroots advocacy efforts. These postcards make it easy to send a powerful message to decision-makers about the importance of libraries in our communities.</p>
             <p>All postcards are provided at the cost of materials only—we donate our time and do not make a profit. This is our way of supporting library advocates and making it easier for everyone to take action.</p>
+        </section>
+
+        <section class="postcard-gallery">
+            <h2>Our Postcard Designs</h2>
+            <p>Here are the beautiful postcard designs currently available in our program. Each design is created to convey the importance of libraries in our communities.</p>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="postcards/postcard1_reading_bench.jpg" alt="Older man reading to a collective of people while on a bench with another woman" class="gallery-image" onclick="openPopup('postcards/postcard1_reading_bench.jpg', 'Postcard 1: Community reading on a bench')">
+                    <div class="gallery-caption">Postcard 1: Community reading on a bench</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="postcards/postcard2_books_stack.jpeg" alt="Two adults, a child, and a dog standing atop a stack of books while reading" class="gallery-image" onclick="openPopup('postcards/postcard2_books_stack.jpeg', 'Postcard 2: Family reading atop stack of books')">
+                    <div class="gallery-caption">Postcard 2: Family reading atop stack of books</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="postcards/postcard3_browsing_tall_books.png" alt="Several people sitting/browsing the books which are much taller than them" class="gallery-image" onclick="openPopup('postcards/postcard3_browsing_tall_books.png', 'Postcard 3: People browsing towering bookshelves')">
+                    <div class="gallery-caption">Postcard 3: People browsing towering bookshelves</div>
+                </div>
+                
+                <div class="gallery-item white-background">
+                    <img src="postcards/postcard4_planting_seed.png" alt="An older man planting a seed in front of the library" class="gallery-image" onclick="openPopup('postcards/postcard4_planting_seed.png', 'Postcard 4: Man planting seed of knowledge')">
+                    <div class="gallery-caption">Postcard 4: Man planting seed of knowledge</div>
+                </div>
+            </div>
+            
+            <!-- Image Popup Modal -->
+            <div id="imagePopup" class="popup-overlay">
+                <div class="popup-content">
+                    <span class="close-popup" onclick="closePopup()">&times;</span>
+                    <img id="popupImage" src="" alt="">
+                    <div id="popupCaption" class="popup-caption"></div>
+                </div>
+            </div>
+            
+            <p class="gallery-note">All postcard designs include the #SaveOurLibraries2025 hashtag to help build our movement online.</p>
         </section>
 
         <section class="ordering-info">
